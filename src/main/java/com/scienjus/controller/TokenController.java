@@ -35,9 +35,12 @@ public class TokenController {
     @Autowired
     private TokenManager tokenManager;
 
+    // @ApiOperation：描述一个类的一个方法，或者说一个接口
+    // @ApiParam：单个参数描述
     @RequestMapping(method = RequestMethod.POST)
-    @ApiOperation(value = "登录")
+    @ApiOperation(value = "用户登录")
     public ResponseEntity<ResultModel> login(@RequestParam String username, @RequestParam String password) {
+        // 断言
         Assert.notNull(username, "username can not be empty");
         Assert.notNull(password, "password can not be empty");
 
